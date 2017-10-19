@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    * {
+        list-style: none;
+        box-sizing:border-box;
+    }
+
+    h1 {
+        width: 90%;
+        margin: 0 auto;
+        color: rgba(244, 243, 243, 0.92);
+        text-align: center;
+        margin-top: 20px;
+    }
+    body{
+        background: url(311597.jpg);
+    }
+    h3{
+           color: rgba(110, 68, 68, 0.98);
+
+    }
+
+    .xian {
+        width: 90%;
+        border-bottom: 1px solid #AEA5A5;
+        margin: 40px auto;
+    }
+
+    input {
+        width: 50%;
+        height: 36px;
+        border-radius:5px;
+       
+    }
+
+    button {
+    	
+        border-radius: 10px;
+        height: 40px;
+        width: 60px;
+        background: rgba(255, 255, 255, 0.92);
+       
+       
+    }
+
+    .weather {
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .show {
+        width: 50%;
+        height: 200px;
+        margin: 20px auto;
+        background: rgb(229, 225, 223);
+        color: #1E3D66;
+        font-size: 22px;
+        text-align: center;
+        padding-top: 2px;
+        border-radius: 10px;
+    }
+
+    .show>div {
+
+        margin-top: 20px;
+    }
+    </style>
+    <script type="text/javascript" src="jquery-1.9.1.js"></script>
+</head>
+
+<body>
+    <h1>天气预报查询</h1>
+    <div class="xian"></div>
+    <div class="weather">
+        <input id='city' ; type="text" name="" placeholder="请输入城市名称">
+        <button id="find">查询</button>
+    </div>
+    <div class="show">
+        <!-- <ul>
+    	<li></li>
+    	<li></li>
+    	<li></li>
+    	<li></li>
+    	</ul> -->
+    </div>
+
+    <img id="pic">
+    <script type="text/javascript">
+      // jsonp 方式的跨域
+    
+    
+    $(function() {
+        $('#find').on('click', function() {
+            var city = $('#city').val();
+            var li=$(".show ul li");
+            if (city == "") {
+                alert('抱歉请输入城市名称！');
+                return;
+            }
+            $.ajax({
+                type: 'GET',
+                dataType: 'jsonp',
+                 jsonp:'callback', 
+                jsonpCallback: 'show',
+                url: 'http://api.asilu.com/weather/',
+                data: {
+                    "city": city,
+                     
+
+                },
+                success: function(data) {
+                    var reslut = data;
+                    console.log(reslut);
+                    // for(i=0;i<reslut.length;i++;){
+
+
+
+                    // }   
+                    $('.show').html("<div><h3>今日日期:" + reslut.weather[0].date + "</h3></div>" + "<p>您所定位城市:" + reslut.city + "&nbsp;&nbsp;今天的天气:" + reslut.weather[0].weather + " &nbsp;风向:" +reslut.weather[0].wind+ "</p>"+"气温:" + reslut.weather[0].temp+'&nbsp;&nbsp;PM2.5指标:'+reslut.pm25+'μg/m³');
+                },
+
+
+            })
+        })
+
+    })
+    
+    
+    // function jsonp(url, data, callback) {
+    //     var script = document.createElement('script');
+    //     document.body.appendChild(script);
+
+    //     data = data || {};
+    //     data.callback = 'cb' + new Date().getTime();
+
+    //     console.log(JSON.stringify(data));
+    //     console.log(JSON.stringify($.param(data)));
+
+    //     window[data.callback] = callback;
+
+    //     url += '?' + $.param(data);// 参数序列化
+
+    //     script.src = url;
+    //     script.onload = function () {
+    //         document.body.removeChild(script);
+    //     }
+    // }
+
+    // function callTesting() {
+    //     jsonp('http://b.test.com/testjsonp2 ', {test: 'ok'}, function (data) {
+    //         console.log(`callTesting() -> callback: ${JSON.stringify(data)}`);
+    //     });
+    // }
+
+    
+    
+    </script>
+</body>
+
+</html>
+
+
+
+
+
