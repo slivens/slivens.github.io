@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="dist/from/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.css">
+    <script type="text/javascript" src="dist/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="dist/from/bootstrap.js"></script>
+    <style type="text/css">
+    body {
+        
+       background:url(309617.jpg);
+       background-size:100%;
+    }
+
+    .outer {
+
+        width: 80%;
+        border: 1px solid #c5b8b8;
+        margin: 40px auto 0;
+        /*height: 471px;*/
+        border-radius: 4px;
+        position: relative;
+        background:rgba(242, 242, 242, 0.92);
+    }
+
+    .search-bg {
+        width: 100%;
+        height: 60px;
+        background: rgba(121, 85, 72, 0.41);
+        padding-top: 10px;
+        border-radius: 4px;
+    }
+
+    .center-block {
+
+        width: 90%;
+    }
+
+    nav.nav {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .pagination {
+        display: block;
+
+
+
+        width: 232px;
+        margin: 10px auto;
+    }
+
+    .pagination>li>a:focus,
+    .pagination>li>a:hover,
+    .pagination>li>span:focus,
+    .pagination>li>span:hover {
+
+        background-color: rgba(121, 85, 72, 0.62);
+    }
+    i{  opacity:0;
+        color:#656363;
+        position: absolute;
+        left:50%;
+        margin-left:-50px;
+        margin-top:100px; 
+        z-index:999;
+
+
+    }
+
+    h1,
+    h2,
+    h3 {
+        text-decoration: none;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        transition: all 0.5s;
+        animation: run 2s linear 1;
+        text-align: center;
+        color:rgb(199, 178, 178);
+    }
+
+
+    h1:hover,
+    h2:hover,
+    h3:hover {
+        -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+        -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+        animation: neon1 1.5s ease-in-out infinite alternate;
+    }
+
+    @-webkit-keyframes neon1 {
+        from {
+            text-shadow: 0 0 10px #fff,
+            0 0 20px #fff,
+            0 0 30px #fff,
+            0 0 40px #228DFF,
+            0 0 70px #228DFF,
+            0 0 80px #228DFF,
+            0 0 100px #228DFF,
+            0 0 1000px #228DFF;
+        }
+        to {
+            text-shadow: 0 0 5px #fff,
+            0 0 10px #fff,
+            0 0 15px #fff,
+            0 0 20px #228DFF,
+            0 0 35px #228DFF,
+            0 0 40px #228DFF,
+            0 0 50px #228DFF,
+            0 0 75px #228DFF;
+        }
+    }
+    button{
+        background: rgb(215, 212, 212);
+    color: #c29584;
+    }
+    .table{
+        margin: 0;
+    }
+    .pagination {
+
+        width:272px;
+    }
+
+    /*table tr td {
+        color:#9C3939;
+    }*/
+    </style>
+</head>
+
+<body>
+     <h2>我的百草园你的三味书屋</h2> 
+    <div class="outer">
+        <div class="search-bg">
+            <div class="center-block">
+                <div class="input-group">
+                    <input id="book" type="text" class="form-control " id="exampleInputAmount" placeholder="请输入书名">
+                    <span class="input-group-btn">
+                <button id="find" type="button" class="btn">Search</button>
+            </span>
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered">
+         <i class="fa fa-spinner fa-pulse fa-5x" ></i>
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>书名</th>
+                    <th>作者</th>
+                    <th>出版时间</th>
+                    <th>平均分</th>
+                    <th>价格</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            
+        </table>
+       
+    </div>
+    <!-- 分页按钮 -->
+    <nav class="nav" aria-label="Page navigation">
+        <ul class="pagination">
+            <li>
+                <a href="#" aria-label="Previous">
+        <span aria-hidden="true">首页</span>
+      </a>
+            </li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+        <span aria-hidden="true">尾页</span>
+      </a>
+            </li>
+        </ul>
+    </nav>
+   <script type="text/javascript" src="books.js"></script>
+</body>
+
+</html>
