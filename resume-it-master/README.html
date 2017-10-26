@@ -1,0 +1,36 @@
+<h1 id="Resume-it"><a href="#Resume-it" class="headerlink" title="Resume-it"></a>Resume-it</h1><p>一个灵活的数据模板分离的在线简历生成器。<br>效果：<a href="https://xiao555.github.io/Resume/">https://xiao555.github.io/Resume/</a><br>如果喜欢的话请给个star ^_^</p>
+<p><img src="./resume.png" alt=""></p>
+<p>Node version v7.7.0</p>
+<h2 id="风格参考"><a href="#风格参考" class="headerlink" title="风格参考"></a>风格参考</h2><p><a href="http://html.love/">@DIYgod</a></p>
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><h3 id="使用默认模板"><a href="#使用默认模板" class="headerlink" title="使用默认模板"></a>使用默认模板</h3><p>这个默认模板是参考@<a href="http://html.love/">DIYgod</a> 的，如果直接用的话只需要修改 <code>data.yaml</code> 里的数据即可。</p>
+<ol>
+<li>YAML语法可以参考<a href="http://www.ruanyifeng.com/blog/2016/07/yaml.html">这里</a></li>
+<li>如果需要用到Markdowm语法，请在字段开头加上 <code>!!md</code>，相应的前端模板要渲染md的话请加上safe过滤：<code>{{ example | safe}}</code></li>
+</ol>
+<h3 id="使用自定义模板"><a href="#使用自定义模板" class="headerlink" title="使用自定义模板"></a>使用自定义模板</h3><h4 id="1-HTML"><a href="#1-HTML" class="headerlink" title="1. HTML"></a>1. HTML</h4><p>html部分在<code>template/index.html</code>，这一部分是页面body的内容，采用<a href="https://mozilla.github.io/nunjucks/">Nunjucks</a>模板引擎，如果需要修改head，请前往<code>template/base.html</code>.</p>
+<p>注：写模板的时候请在必要的地方用一下判断，有的地方可能没有数据。</p>
+<h4 id="2-CSS"><a href="#2-CSS" class="headerlink" title="2. CSS"></a>2. CSS</h4><p>css部分在<code>src/styles/stylus</code>, 默认用stylus写。</p>
+<p>注：</p>
+<ol>
+<li>已经加载了font-awesome，可以直接用</li>
+<li>加载了autoprefixer插件自动补全前缀</li>
+</ol>
+<h4 id="3-其他文件"><a href="#3-其他文件" class="headerlink" title="3. 其他文件"></a>3. 其他文件</h4><p>注：现在改用gulp打包了，如果要添加其他文件的话需要写一下配置文件<code>gulpfile.js</code>, 暂时没有提供打包其他文件的task</p>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><pre><code class="javascript">npm i
+</code></pre>
+<h3 id="Dev"><a href="#Dev" class="headerlink" title="Dev"></a>Dev</h3><pre><code class="javascript">npm start
+</code></pre>
+<p>自动打开浏览器访问：<code>http://localhost:3000/</code>。 Browsersync 带热重载功能。</p>
+<p>打印版: 首页最下面有个打印版链接 或者 访问 <code>http://localhost:3000/print.html</code>，直接打印即可，注意勾选背景图片</p>
+<h3 id="Public"><a href="#Public" class="headerlink" title="Public"></a>Public</h3><p>请先在<code>public.js</code> 里配好repo地址，然后：</p>
+<pre><code class="javascript">npm run public
+</code></pre>
+<p>会提交到master分支和gh-pages分支<br>浏览：<code>https://yourname.github.io/reponame/</code> 即可，print版访问：<code>https://yourname.github.io/reponame/print.html</code>。</p>
+<h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><ol>
+<li>数据内容直接在页面上修改</li>
+<li>多模板</li>
+<li>命令行接口</li>
+<li>在线编辑+发布+导出</li>
+</ol>
+<h2 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h2><p>2017.6.18<br>  调整结构，采用 Gulp 打包，public 用 <code>simple-git</code>, 不用shell脚本了</p>
+<h2 id="LICENSE"><a href="#LICENSE" class="headerlink" title="LICENSE"></a>LICENSE</h2><p>MIT</p>

@@ -1,0 +1,91 @@
+body.print {
+  min-width: 0;
+}
+body.print .container {
+  width: 1080px;
+  position: relative;
+  background-color: #6c6f6f;
+  margin: 0;
+}
+body.print .sidebar {
+  width: 330px;
+  padding: 25px;
+  margin-bottom: 0;
+  position: relative;
+  float: left;
+}
+body.print .side-info li {
+  padding-top: 20px;
+}
+body.print .side-info dt {
+  font-size: 20px;
+}
+body.print .side-info dd {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+body.print .note {
+  margin-top: 100px;
+  font-size: 20px;
+}
+body.print .main {
+  position: relative;
+  float: right;
+  left: 0;
+  width: 750px;
+  padding: 10px 20px 10px 20px;
+  box-sizing: border-box;
+}
+body.print .main-info > li {
+  padding-top: 10px;
+}
+body.print .main-info dt {
+  font-size: 26px;
+}
+body.print .main-info dd {
+  font-size: 17px;
+}
+body.print .main-info span {
+  font-size: 18px;
+}
+body.print h3 {
+  font-size: 20px;
+}
+body.print h4 {
+  font-size: 20px;
+}
+body.print h4 a,
+body.print h5 a {
+  font-size: 14px;
+}
+body.print h5 {
+  font-size: 18px;
+}
+body.print .exp {
+  border-left: 2px solid #00796b;
+  margin-left: 15px;
+}
+body.print .skill .exp {
+  border-left: 0;
+}
+body.print .skill .exp li {
+  list-style: circle;
+  margin-top: 10px;
+}
+body.print .exp p {
+  margin-bottom: 0;
+}
+body.print .exp > li {
+  margin: 10px 0 0 20px;
+}
+body.print .exp img {
+  width: 150px;
+  float: left;
+  margin-right: 10px;
+}
+body.print .efe .task4img {
+  height: 73px;
+}
+body.print footer {
+  display: none;
+}
