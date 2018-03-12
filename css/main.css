@@ -412,7 +412,7 @@ table>tbody>tr:nth-of-type(odd) {
   background-color: #f9f9f9;
 }
 table>tbody>tr:hover {
-  background-color: #bce2dc;
+  background-color: #d08d86;
 }
 caption,
 th,
@@ -1001,6 +1001,7 @@ pre .javascript .function {
 .pagination .prev,
 .pagination .next,
 .pagination .page-number {
+  color: #fff;
   border-bottom: 0;
   border-top: 1px solid #eee;
   transition-property: border-color;
@@ -1202,7 +1203,7 @@ pre .javascript .function {
 }
 .menu .menu-item a {
   display: block;
-  font-size: 20px;
+  font-size: 18px;
   line-height: inherit;
   border-bottom: 1px solid transparent;
   transition-property: border-color;
@@ -1365,7 +1366,7 @@ pre .javascript .function {
   margin-left: -2px;
   width: 4px;
   height: 100%;
-  background: #bce2dc;
+  background: #d08d86;
   z-index: -1;
 }
 @media (max-width: 767px) {
@@ -1753,7 +1754,7 @@ pre .javascript .function {
 .site-author-name {
   margin: 5px 0 0;
   text-align: center;
-  color: #bce2dc;
+  color: #d08d86;
   font-weight: normal;
 }
 .site-description {
@@ -1830,7 +1831,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #404e01;
+  background: #cf11ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1868,7 +1869,7 @@ pre .javascript .function {
   color: #555;
 }
 .sidebar-nav li:hover {
-  color: #bce2dc;
+  color: #d08d86;
 }
 .page-post-detail .sidebar-nav-toc {
   padding: 0 5px;
@@ -1953,8 +1954,8 @@ pre .javascript .function {
 .footer {
   font-size: 20px;
   color: #999;
-  background: #222 !important;
-  height: 60px !important;
+  background: #d08d86 !important;
+  height: 50px !important;
 }
 .footer img {
   border: none;
@@ -2625,7 +2626,7 @@ hr {
   margin-top: 80px;
 }
 .header {
-  background: #bce2dc;
+  background: #d08d86;
 }
 .header-inner {
   padding: 25px 0 20px;
@@ -2824,7 +2825,7 @@ hr {
 }
 .posts-expand .post-tags a {
   padding: 1px 5px;
-  background: #bce2dc;
+  background: #d08d86;
   border-bottom: none;
 }
 .posts-expand .post-tags a:hover {
@@ -2902,7 +2903,7 @@ hr {
 }
 .pagination {
   margin: 120px 0 0;
-  text-align: left;
+  text-align: center;
 }
 @media (max-width: 767px) {
   .pagination {
@@ -2913,7 +2914,7 @@ hr {
 .footer {
   margin-top: 80px;
   padding: 10px 0;
-  background: #bce2dc;
+  background: #d08d86;
   color: #666;
 }
 .footer-inner {
