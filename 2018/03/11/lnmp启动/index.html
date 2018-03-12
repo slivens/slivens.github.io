@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Sliven&#39;s BLOG">
 <meta property="og:description" content="lnmp项目环境搭建个人github相关项目:Lnmp请点击此处  首先进入docker-compose的配置文件下 进行命令docker-compose up -d 另外再执行docker-compose build 载入dockfile 运行docker-compose exec php-fpm bash 进入此容器中 在 /var/www 下执行laravel new blog 然后exit">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-12T13:30:32.220Z">
+<meta property="og:updated_time" content="2018-03-12T15:06:28.211Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="lnmp启动">
 <meta name="twitter:description" content="lnmp项目环境搭建个人github相关项目:Lnmp请点击此处  首先进入docker-compose的配置文件下 进行命令docker-compose up -d 另外再执行docker-compose build 载入dockfile 运行docker-compose exec php-fpm bash 进入此容器中 在 /var/www 下执行laravel new blog 然后exit">
@@ -369,9 +369,10 @@
 <li>运行docker-compose exec php-fpm bash 进入此容器中</li>
 <li>在 /var/www 下执行laravel new blog 然后exit退出</li>
 <li>来到当前www的目录中，此时就可以看到blog目录cd中 执行php artisan make：Auth 然后执行 php artisan migrate</li>
-<li>vim 编辑 隐藏的.env文件配置如下<a id="more"></a>
-DB_CONNECTION=mysql<br>DB_HOST=mysql<br>DB_PORT=3306<br>DB_DATABASE=blog<br>DB_USERNAME=root<br>DB_PASSWORD=123456</li>
+<li>vim 编辑 隐藏的.env文件配置如下</li>
 </ol>
+<a id="more"></a>
+<p>DB_CONNECTION=mysql<br>DB_HOST=mysql<br>DB_PORT=3306<br>DB_DATABASE=blog<br>DB_USERNAME=root<br>DB_PASSWORD=123456</p>
 <p>BROADCAST_DRIVER=log<br>CACHE_DRIVER=file<br>SESSION_DRIVER=redis<br>SESSION_LIFETIME=120<br>QUEUE_DRIVER=sync</p>
 <p>REDIS_HOST=redis<br>REDIS_PASSWORD=123456<br>REDIS_PORT=6379</p>
 <p>7.可能遇到的小坑：</p>
@@ -517,7 +518,7 @@ DB_CONNECTION=mysql<br>DB_HOST=mysql<br>DB_PORT=3306<br>DB_DATABASE=blog<br>DB_U
               
               
               <div class="site-state-item site-state-categories">
-                <a href="/categories/index-1.html">
+                <a href="/categories/index.html">
                   <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
