@@ -259,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/11/vue脱坑记/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/22/lnmp启动/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sliven">
@@ -278,7 +278,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/11/vue脱坑记/" itemprop="url">vue2x版脱坑记</a></h1>
+                <a class="post-title-link" href="/2018/02/22/lnmp启动/" itemprop="url">lnmp启动</a></h1>
         
 
         <div class="post-meta">
@@ -290,8 +290,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-11T15:37:26+08:00">
-                2018-03-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-22T15:37:26+08:00">
+                2018-02-22
               </time>
             
 
@@ -313,8 +313,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vue/" itemprop="url" rel="index">
-                    <span itemprop="name">vue</span>
+                  <a href="/categories/linux-docker/" itemprop="url" rel="index">
+                    <span itemprop="name">linux docker</span>
                   </a>
                 </span>
 
@@ -331,8 +331,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/11/vue脱坑记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/03/11/vue脱坑记/" itemprop="commentCount"></span>
+                <a href="/2018/02/22/lnmp启动/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/02/22/lnmp启动/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -361,13 +361,18 @@
 
       
         
-          <ol>
-<li><strong>cnpm : 国内对npm的镜像版本的相关问题</strong><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">cnpm website: https://npm.taobao.org/</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// cnpm 的大多命令跟 npm 的是一致的,比如安装,卸载这些</span><br></pre></td></tr></table></figure>
-</li>
+          <h2 id="lnmp项目环境搭建"><a href="#lnmp项目环境搭建" class="headerlink" title="lnmp项目环境搭建"></a>lnmp项目环境搭建</h2><p>个人github相关项目:<a href="https://github.com/slivens/lnmp-slw" target="_blank" rel="noopener">Lnmp请点击此处</a></p>
+<ol>
+<li>首先进入docker-compose的配置文件下</li>
+<li>进行命令docker-compose up -d 另外再执行docker-compose build 载入dockfile</li>
+<li>运行docker-compose exec php-fpm bash 进入此容器中</li>
+<li>在 /var/www 下执行laravel new blog 然后exit退出</li>
+<li>来到当前www的目录中，此时就可以看到blog目录cd中 执行php artisan make：Auth 然后执行 php artisan migrate</li>
+<li>vim 编辑 隐藏的.env文件配置如下</li>
 </ol>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/11/vue脱坑记/#more" rel="contents">
+            <a class="btn" href="/2018/02/22/lnmp启动/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -418,7 +423,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/11/lnmp启动/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/11/es6之async 函数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sliven">
@@ -437,7 +442,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/11/lnmp启动/" itemprop="url">lnmp启动</a></h1>
+                <a class="post-title-link" href="/2018/02/11/es6之async 函数/" itemprop="url">es6之async/await 函数</a></h1>
         
 
         <div class="post-meta">
@@ -449,8 +454,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-11T15:37:26+08:00">
-                2018-03-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-11T15:37:26+08:00">
+                2018-02-11
               </time>
             
 
@@ -472,8 +477,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux-docker/" itemprop="url" rel="index">
-                    <span itemprop="name">linux docker</span>
+                  <a href="/categories/Es6/" itemprop="url" rel="index">
+                    <span itemprop="name">Es6</span>
                   </a>
                 </span>
 
@@ -490,8 +495,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/11/lnmp启动/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/03/11/lnmp启动/" itemprop="commentCount"></span>
+                <a href="/2018/02/11/es6之async 函数/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/02/11/es6之async 函数/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -520,18 +525,176 @@
 
       
         
-          <h2 id="lnmp项目环境搭建"><a href="#lnmp项目环境搭建" class="headerlink" title="lnmp项目环境搭建"></a>lnmp项目环境搭建</h2><p>个人github相关项目:<a href="https://github.com/slivens/lnmp-slw" target="_blank" rel="noopener">Lnmp请点击此处</a></p>
-<ol>
-<li>首先进入docker-compose的配置文件下</li>
-<li>进行命令docker-compose up -d 另外再执行docker-compose build 载入dockfile</li>
-<li>运行docker-compose exec php-fpm bash 进入此容器中</li>
-<li>在 /var/www 下执行laravel new blog 然后exit退出</li>
-<li>来到当前www的目录中，此时就可以看到blog目录cd中 执行php artisan make：Auth 然后执行 php artisan migrate</li>
-<li>vim 编辑 隐藏的.env文件配置如下</li>
-</ol>
+          <h3 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h3><p>ES2017 标准引入了 async 函数，使得异步操作变得更加方便。</p>
+<p>async 函数是什么？一句话，它就是 Generator 函数的语法糖。</p>
+<p>前文有一个 Generator 函数，依次读取两个文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&apos;fs&apos;);</span><br><span class="line"></span><br><span class="line">const readFile = function (fileName) &#123;</span><br><span class="line">  return new Promise(function (resolve, reject) &#123;</span><br><span class="line">    fs.readFile(fileName, function(error, data) &#123;</span><br><span class="line">      if (error) return reject(error);</span><br><span class="line">      resolve(data);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const gen = function* () &#123;</span><br><span class="line">  const f1 = yield readFile(&apos;/etc/fstab&apos;);</span><br><span class="line">  const f2 = yield readFile(&apos;/etc/shells&apos;);</span><br><span class="line">  console.log(f1.toString());</span><br><span class="line">  console.log(f2.toString());</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>写成async函数，就是下面这样。<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/11/lnmp启动/#more" rel="contents">
+            <a class="btn" href="/2018/02/11/es6之async 函数/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/11/git常用命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sliven">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/123.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sliven's BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/11/git常用命令/" itemprop="url">Git常用命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-11T15:37:26+08:00">
+                2018-01-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/11/git常用命令/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2018/01/11/git常用命令/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="查看远程分支"><a href="#查看远程分支" class="headerlink" title="查看远程分支"></a>查看远程分支</h3><p>加上-a参数可以查看远程分支，远程分支会用红色表示出来（如果你开了颜色支持的话）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -a</span><br><span class="line">  master</span><br><span class="line">  remote</span><br><span class="line">  tungway</span><br><span class="line">  v1.52</span><br><span class="line">* zrong</span><br><span class="line">  remotes/origin/master</span><br><span class="line">  remotes/origin/tungway</span><br><span class="line">  remotes/origin/v1.52</span><br><span class="line">  remotes/origin/zrong</span><br></pre></td></tr></table></figure>
+<h3 id="删除远程分支和tag"><a href="#删除远程分支和tag" class="headerlink" title="删除远程分支和tag"></a>删除远程分支和tag</h3><p>在Git v1.7.0 之后，可以使用这种语法删除远程分支：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin --delete &lt;branchName&gt;</span><br></pre></td></tr></table></figure></p>
+<p>删除tag这么用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin --delete tag &lt;tagname&gt;</span><br></pre></td></tr></table></figure></p>
+<p>否则，可以使用这种语法，推送一个空分支到远程分支，其实就相当于删除远程分支：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin :&lt;branchName&gt;</span><br></pre></td></tr></table></figure>
+<p>这是删除tag的方法，推送一个空tag到远程tag：<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/11/git常用命令/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -573,7 +736,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -623,7 +786,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -634,7 +797,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index-1.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -644,8 +807,8 @@
               
               
               <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                <a href="/tags/index-1.html">
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
