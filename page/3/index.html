@@ -371,9 +371,9 @@
 
       
         
-          <h3 id="state单一状态树"><a href="#state单一状态树" class="headerlink" title="state单一状态树"></a>state单一状态树</h3><p>vuex 使用单一状态树——是的，用一个对象就包含了全部的应用层级状态。至此它便作为一个“唯一数据源 (SSOT)”而存在。这也意味着，每个应用将仅仅包含一个 store 实例。单一状态树让我们能够直接地定位任一特定的状态片段，在调试的过程中也能轻易地取得整个当前应用状态的快照。</p>
+          <h4 id="state单一状态树"><a href="#state单一状态树" class="headerlink" title="state单一状态树"></a>state单一状态树</h4><p>vuex 使用单一状态树——是的，用一个对象就包含了全部的应用层级状态。至此它便作为一个“唯一数据源 (SSOT)”而存在。这也意味着，每个应用将仅仅包含一个 store 实例。单一状态树让我们能够直接地定位任一特定的状态片段，在调试的过程中也能轻易地取得整个当前应用状态的快照。</p>
 <p>单状态树和模块化并不冲突——在后面的章节里我们会讨论如何将状态和状态变更事件分布到各个子模块中。</p>
-<h3 id="在-Vue-组件中获得-Vuex-状态"><a href="#在-Vue-组件中获得-Vuex-状态" class="headerlink" title="在 Vue 组件中获得 Vuex 状态"></a>在 Vue 组件中获得 Vuex 状态</h3><p> 那么我们如何在 Vue 组件中展示状态呢？由于 Vuex 的状态存储是响应式的，从 store 实例中读取状态最简单的方法就是在计算属性中返回某个状态：</p>
+<h4 id="在-Vue-组件中获得-Vuex-状态"><a href="#在-Vue-组件中获得-Vuex-状态" class="headerlink" title="在 Vue 组件中获得 Vuex 状态"></a>在 Vue 组件中获得 Vuex 状态</h4><p> 那么我们如何在 Vue 组件中展示状态呢？由于 Vuex 的状态存储是响应式的，从 store 实例中读取状态最简单的方法就是在计算属性中返回某个状态：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 创建一个 Counter 组件</span><br><span class="line">const Counter = &#123;</span><br><span class="line">  template: `&lt;div&gt;&#123;&#123; count &#125;&#125;&lt;/div&gt;`,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    count () &#123;</span><br><span class="line">      return store.state.count</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>每当 store.state.count 变化的时候, 都会重新求取计算属性，并且触发更新相关联的 DOM。<br>
           <!--noindex-->

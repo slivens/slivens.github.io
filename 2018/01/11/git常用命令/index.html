@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Sliven&#39;s BLOG">
 <meta property="og:description" content="查看远程分支加上-a参数可以查看远程分支，远程分支会用红色表示出来（如果你开了颜色支持的话）： 12345678910$ git branch -a  master  remote  tungway  v1.52* zrong  remotes/origin/master  remotes/origin/tungway  remotes/origin/v1.52  remotes/origin/z">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-13T12:03:36.889Z">
+<meta property="og:updated_time" content="2018-03-16T16:38:14.853Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git常用命令">
 <meta name="twitter:description" content="查看远程分支加上-a参数可以查看远程分支，远程分支会用红色表示出来（如果你开了颜色支持的话）： 12345678910$ git branch -a  master  remote  tungway  v1.52* zrong  remotes/origin/master  remotes/origin/tungway  remotes/origin/v1.52  remotes/origin/z">
@@ -372,15 +372,15 @@
       
 
       
-        <h3 id="查看远程分支"><a href="#查看远程分支" class="headerlink" title="查看远程分支"></a>查看远程分支</h3><p>加上-a参数可以查看远程分支，远程分支会用红色表示出来（如果你开了颜色支持的话）：</p>
+        <h4 id="查看远程分支"><a href="#查看远程分支" class="headerlink" title="查看远程分支"></a>查看远程分支</h4><p>加上-a参数可以查看远程分支，远程分支会用红色表示出来（如果你开了颜色支持的话）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -a</span><br><span class="line">  master</span><br><span class="line">  remote</span><br><span class="line">  tungway</span><br><span class="line">  v1.52</span><br><span class="line">* zrong</span><br><span class="line">  remotes/origin/master</span><br><span class="line">  remotes/origin/tungway</span><br><span class="line">  remotes/origin/v1.52</span><br><span class="line">  remotes/origin/zrong</span><br></pre></td></tr></table></figure>
-<h3 id="删除远程分支和tag"><a href="#删除远程分支和tag" class="headerlink" title="删除远程分支和tag"></a>删除远程分支和tag</h3><p>在Git v1.7.0 之后，可以使用这种语法删除远程分支：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin --delete &lt;branchName&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="删除远程分支和tag"><a href="#删除远程分支和tag" class="headerlink" title="删除远程分支和tag"></a>删除远程分支和tag</h4><p>在Git v1.7.0 之后，可以使用这种语法删除远程分支：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin --delete &lt;branchName&gt;</span><br></pre></td></tr></table></figure></p>
 <p>删除tag这么用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin --delete tag &lt;tagname&gt;</span><br></pre></td></tr></table></figure></p>
 <p>否则，可以使用这种语法，推送一个空分支到远程分支，其实就相当于删除远程分支：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin :&lt;branchName&gt;</span><br></pre></td></tr></table></figure>
 <p>这是删除tag的方法，推送一个空tag到远程tag：<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git tag -d &lt;tagname&gt;</span><br><span class="line">$ git push origin :refs/tags/&lt;tagname</span><br></pre></td></tr></table></figure></p>
 <p>两种语法作用完全相同。</p>
-<h3 id="删除不存在对应远程分支的本地分支"><a href="#删除不存在对应远程分支的本地分支" class="headerlink" title="删除不存在对应远程分支的本地分支"></a>删除不存在对应远程分支的本地分支</h3><p>假设这样一种情况：</p>
+<h4 id="删除不存在对应远程分支的本地分支"><a href="#删除不存在对应远程分支的本地分支" class="headerlink" title="删除不存在对应远程分支的本地分支"></a>删除不存在对应远程分支的本地分支</h4><p>假设这样一种情况：</p>
 <ol>
 <li>我创建了本地分支b1并pull到远程分支 origin/b1；</li>
 <li>其他人在本地使用fetch或pull创建了本地的b1分支；</li>
@@ -392,7 +392,7 @@
 <p>这时候能够看到b1是stale的，使用 git remote prune origin 可以将其从本地版本库中去除。</p>
 <p>更简单的方法是使用这个命令，它在fetch之后删除掉没有与远程分支对应的本地分支：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$git fetch -p</span><br></pre></td></tr></table></figure>
-<h3 id="重命名远程分支"><a href="#重命名远程分支" class="headerlink" title="重命名远程分支"></a>重命名远程分支</h3><p>在git中重命名远程分支，其实就是先删除远程分支，然后重命名本地分支，再重新提交一个远程分支。</p>
+<h4 id="重命名远程分支"><a href="#重命名远程分支" class="headerlink" title="重命名远程分支"></a>重命名远程分支</h4><p>在git中重命名远程分支，其实就是先删除远程分支，然后重命名本地分支，再重新提交一个远程分支。</p>
 <p>例如下面的例子中，我需要把 devel 分支重命名为 develop 分支：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -av</span><br><span class="line">* devel                             752bb84 Merge pull request #158 from Gwill/devel</span><br><span class="line">  master                            53b27b8 Merge pull request #138 from tdlrobin/master</span><br><span class="line">  zrong                             2ae98d8 modify CCFileUtils, export getFileData</span><br><span class="line">  remotes/origin/HEAD               -&gt; origin/master</span><br><span class="line">  remotes/origin/add_build_script   d4a8c4f Merge branch &apos;master&apos; into add_build_script</span><br><span class="line">  remotes/origin/devel              752bb84 Merge pull request #158 from Gwill/devel</span><br><span class="line">  remotes/origin/devel_qt51         62208f1 update .gitignore</span><br><span class="line">  remotes/origin/master             53b27b8 Merge pull request #138 from tdlrobin/master</span><br><span class="line">  remotes/origin/zrong              2ae98d8 modify CCFileUtils, export getFileData</span><br></pre></td></tr></table></figure>
 <p>删除远程分支：  </p>
@@ -409,8 +409,8 @@
 <li>设置 Default Branch 为其他的分支（例如 master）；</li>
 <li>重新执行删除远程分支命令。</li>
 </ul>
-<h3 id="把本地tag推送到远程"><a href="#把本地tag推送到远程" class="headerlink" title="把本地tag推送到远程"></a>把本地tag推送到远程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push --tags</span><br></pre></td></tr></table></figure>
-<h3 id="获取远程tag"><a href="#获取远程tag" class="headerlink" title="获取远程tag"></a>获取远程tag</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">	</span><br><span class="line">$ git fetch origin tag &lt;tagname&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="把本地tag推送到远程"><a href="#把本地tag推送到远程" class="headerlink" title="把本地tag推送到远程"></a>把本地tag推送到远程</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push --tags</span><br></pre></td></tr></table></figure>
+<h4 id="获取远程tag"><a href="#获取远程tag" class="headerlink" title="获取远程tag"></a>获取远程tag</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">	</span><br><span class="line">$ git fetch origin tag &lt;tagname&gt;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -624,7 +624,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看远程分支"><span class="nav-number">1.</span> <span class="nav-text">查看远程分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除远程分支和tag"><span class="nav-number">2.</span> <span class="nav-text">删除远程分支和tag</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除不存在对应远程分支的本地分支"><span class="nav-number">3.</span> <span class="nav-text">删除不存在对应远程分支的本地分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重命名远程分支"><span class="nav-number">4.</span> <span class="nav-text">重命名远程分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#把本地tag推送到远程"><span class="nav-number">5.</span> <span class="nav-text">把本地tag推送到远程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取远程tag"><span class="nav-number">6.</span> <span class="nav-text">获取远程tag</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看远程分支"><span class="nav-number">1.</span> <span class="nav-text">查看远程分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除远程分支和tag"><span class="nav-number">2.</span> <span class="nav-text">删除远程分支和tag</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除不存在对应远程分支的本地分支"><span class="nav-number">3.</span> <span class="nav-text">删除不存在对应远程分支的本地分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重命名远程分支"><span class="nav-number">4.</span> <span class="nav-text">重命名远程分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#把本地tag推送到远程"><span class="nav-number">5.</span> <span class="nav-text">把本地tag推送到远程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取远程tag"><span class="nav-number">6.</span> <span class="nav-text">获取远程tag</span></a></li></ol></div>
             
 
           </div>

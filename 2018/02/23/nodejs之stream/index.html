@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Sliven&#39;s BLOG">
 <meta property="og:description" content="Stream是什么？”流“（stream）这个概念，最简单的理解，就是在数据还没有接收完成时，就开始处理它。 12var fs = require(&amp;apos;fs&amp;apos;);fs.createReadStream(&amp;apos;./data/customers.csv&amp;apos;).pipe(process.stdout); 上面代码中，fs.createReadStream 方法以”流“的方">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-13T12:04:07.597Z">
+<meta property="og:updated_time" content="2018-03-16T16:39:10.848Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nodejs之stream">
 <meta name="twitter:description" content="Stream是什么？”流“（stream）这个概念，最简单的理解，就是在数据还没有接收完成时，就开始处理它。 12var fs = require(&amp;apos;fs&amp;apos;);fs.createReadStream(&amp;apos;./data/customers.csv&amp;apos;).pipe(process.stdout); 上面代码中，fs.createReadStream 方法以”流“的方">
@@ -372,14 +372,14 @@
       
 
       
-        <h3 id="Stream是什么？"><a href="#Stream是什么？" class="headerlink" title="Stream是什么？"></a>Stream是什么？</h3><p>”流“（stream）这个概念，最简单的理解，就是在数据还没有接收完成时，就开始处理它。</p>
+        <h4 id="Stream是什么？"><a href="#Stream是什么？" class="headerlink" title="Stream是什么？"></a>Stream是什么？</h4><p>”流“（stream）这个概念，最简单的理解，就是在数据还没有接收完成时，就开始处理它。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(&apos;fs&apos;);</span><br><span class="line">fs.createReadStream(&apos;./data/customers.csv&apos;).pipe(process.stdout);</span><br></pre></td></tr></table></figure>
 <p>上面代码中，fs.createReadStream 方法以”流“的方式读取文件，这可以在文件还没有读取完的情况下，就输出到标准输出。这显然对大文件的读取非常有利。</p>
 <p>Unix操作系统从很早以前，就有Stream（流）这个概念，它是不同进程之间传递数据的一种方式。管道命令Pipe就起到在不同命令之间，连接Stream的作用。<br><a id="more"></a><br>Stream把较大的数据，拆成很小的部分。只要命令部署了Stream接口，就可以把一个流的输出接到另一个流的输入。Node引入了这个概念，通过Stream为异步读写数据提供的统一接口。无论是硬盘数据、网络数据，还是内存数据，都可以采用这个接口读写。</p>
 <p>读写数据有两种方式。一种方式是同步处理，即先将数据全部读入内存，然后处理。它的优点是符合直觉，流程非常自然，缺点是如果遇到大文件，要花很长时间，可能要过很久才能进入数据处理的步骤。另一种方式就是Stream方式，它是系统读取外部数据实际上的方式，即每次只读入数据的一小块，像“流水”一样。所以，Stream方式就是每当系统读入了一小块数据，就会触发一个事件，发出“新数据块”的信号，只要监听这个事件，就能掌握进展，做出相应处理，这样就提高了程序的性能。</p>
 <p>Stream接口最大特点就是通过事件通信，具有readable、writable、drain、data、end、close等事件，既可以读取数据，也可以写入数据。读写数据时，每读入（或写入）一段数据，就会触发一次data事件，全部读取（或写入）完毕，触发end事件。如果发生错误，则触发error事件。</p>
 <p>一个对象只要部署了Stream接口，就可以从读取数据，或者写入数据。Node内部很多涉及IO处理的对象，都部署了Stream接口，比如HTTP连接、文件读写、标准输入输出等。</p>
-<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><p>Node的I/O操作都是异步的，所以与磁盘和网络的交互，都要通过回调函数。一个典型的写文件操作，可能像下面这样。</p>
+<h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><p>Node的I/O操作都是异步的，所以与磁盘和网络的交互，都要通过回调函数。一个典型的写文件操作，可能像下面这样。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&apos;http&apos;);</span><br><span class="line">var fs = require(&apos;fs&apos;);</span><br><span class="line">var server = http.createServer(function (req, res) &#123;</span><br><span class="line">  fs.readFile(__dirname + &apos;/data.txt&apos;, function (err, data) &#123;</span><br><span class="line">    res.end(data);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">server.listen(8000);</span><br></pre></td></tr></table></figure>
 <p>上面的代码有一个问题，那就是它必须将整个data.txt文件读入内存，然后再输入。如果data.txt非常大，就会占用大量的内容。一旦有多个并发请求，操作就会变得非常缓慢，用户不得不等很久，才能得到结果。</p>
 <p>由于参数req和res都部署了Stream接口，可以使用fs.createReadStream()替代fs.readFile()，就能解决这个问题。</p>
@@ -400,7 +400,7 @@
 <ul>
 <li>可读数据流接口，用于读取数据。</li>
 <li>可写数据流接口，用于写入数据。</li>
-<li>双向数据流接口，用于读取和写入数据，比如Node的tcp sockets、zlib、crypto都部署了这个接口。<h3 id="可读数据流"><a href="#可读数据流" class="headerlink" title="可读数据流"></a>可读数据流</h3>可读数据流”用来产生数据。它表示数据的来源，只要一个对象提供“可读数据流”，就表示你可以从其中读取数据</li>
+<li>双向数据流接口，用于读取和写入数据，比如Node的tcp sockets、zlib、crypto都部署了这个接口。<h4 id="可读数据流"><a href="#可读数据流" class="headerlink" title="可读数据流"></a>可读数据流</h4>可读数据流”用来产生数据。它表示数据的来源，只要一个对象提供“可读数据流”，就表示你可以从其中读取数据</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var Readable = require(&apos;stream&apos;).Readable;</span><br><span class="line">var rs = new Readable();</span><br><span class="line">rs.push(&apos;beep &apos;);</span><br><span class="line">rs.push(&apos;boop\n&apos;);</span><br><span class="line">rs.push(null);</span><br><span class="line">rs.pipe(process.stdout);</span><br></pre></td></tr></table></figure>
 <p>上面代码产生了一个可写数据流，最后将其写入标注输出。可读数据流的push方法，用来将数据输入缓存。<br>rs.push(null)中的null，用来告诉rs，数据输入完毕。</p>
@@ -642,7 +642,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Stream是什么？"><span class="nav-number">1.</span> <span class="nav-text">Stream是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本用法"><span class="nav-number">2.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可读数据流"><span class="nav-number">3.</span> <span class="nav-text">可读数据流</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Stream是什么？"><span class="nav-number">1.</span> <span class="nav-text">Stream是什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本用法"><span class="nav-number">2.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可读数据流"><span class="nav-number">3.</span> <span class="nav-text">可读数据流</span></a></li></ol></div>
             
 
           </div>

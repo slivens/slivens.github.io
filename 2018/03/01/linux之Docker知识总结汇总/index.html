@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Sliven&#39;s BLOG">
 <meta property="og:description" content="什么是docker？Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从Apache2.0协议开源。 Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。 容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 app）,更重要的是容器性能开销极低。 Docker 的优点">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-13T12:03:48.605Z">
+<meta property="og:updated_time" content="2018-03-16T16:38:51.154Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux之Docker知识总结汇总">
 <meta name="twitter:description" content="什么是docker？Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从Apache2.0协议开源。 Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。 容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 app）,更重要的是容器性能开销极低。 Docker 的优点">
@@ -372,20 +372,20 @@
       
 
       
-        <h3 id="什么是docker？"><a href="#什么是docker？" class="headerlink" title="什么是docker？"></a>什么是docker？</h3><p>Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从Apache2.0协议开源。</p>
+        <h4 id="什么是docker？"><a href="#什么是docker？" class="headerlink" title="什么是docker？"></a>什么是docker？</h4><p>Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从Apache2.0协议开源。</p>
 <p>Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。</p>
 <p>容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 app）,更重要的是容器性能开销极低。</p>
-<h3 id="Docker-的优点"><a href="#Docker-的优点" class="headerlink" title="Docker 的优点"></a>Docker 的优点</h3><a id="more"></a>
+<h4 id="Docker-的优点"><a href="#Docker-的优点" class="headerlink" title="Docker 的优点"></a>Docker 的优点</h4><a id="more"></a>
 <p><strong>1、简化程序：</strong></p>
 <p>Docker 让开发者可以打包他们的应用以及依赖包到一个可移植的容器中，然后发布到任何流行的 Linux 机器上，便可以实现虚拟化。Docker改变了虚拟化的方式，使开发者可以直接将自己的成果放入Docker中进行管理。方便快捷已经是 Docker的最大优势，过去需要用数天乃至数周的    任务，在Docker容器的处理下，只需要数秒就能完成。</p>
 <p><strong>2、避免选择恐惧症：</strong></p>
 <p>如果你有选择恐惧症，还是资深患者。Docker 帮你    打包你的纠结！比如 Docker 镜像；Docker 镜像中包含了运行环境和配置，所以 Docker 可以简化部署多种应用实例工作。比如 Web 应用、后台应用、数据库应用、大数据应用比如 Hadoop 集群、消息队列等等都可以打包成一个镜像部署。</p>
 <p><strong>3、节省开支：</strong></p>
 <p>一方面，云计算时代到来，使开发者不必为了追求效果而配置高额的硬件，Docker 改变了高性能必然高价格的思维定势。Docker 与云的结合，让云空间得到更充分的利用。不仅解决了硬件管理的问题，也改变了虚拟化的方式。</p>
-<h3 id="使用-yum-安装（CentOS-7下）"><a href="#使用-yum-安装（CentOS-7下）" class="headerlink" title="使用 yum 安装（CentOS 7下）"></a>使用 yum 安装（CentOS 7下）</h3><p>Docker 要求 CentOS 系统的内核版本高于 3.10 ，查看本页面的前提条件来验证你的CentOS 版本是否支持 Docker 。</p>
+<h4 id="使用-yum-安装（CentOS-7下）"><a href="#使用-yum-安装（CentOS-7下）" class="headerlink" title="使用 yum 安装（CentOS 7下）"></a>使用 yum 安装（CentOS 7下）</h4><p>Docker 要求 CentOS 系统的内核版本高于 3.10 ，查看本页面的前提条件来验证你的CentOS 版本是否支持 Docker 。</p>
 <p>通过 uname -r 命令查看你当前的内核版本</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@runoob ~]# uname -r 3.10.0-327.el7.x86_64</span><br></pre></td></tr></table></figure>
-<h3 id="安装-Docker"><a href="#安装-Docker" class="headerlink" title="安装 Docker"></a>安装 Docker</h3><p>Docker 软件包和依赖包已经包含在默认的 CentOS-Extras 软件源里，安装命令如下：</p>
+<h4 id="安装-Docker"><a href="#安装-Docker" class="headerlink" title="安装 Docker"></a>安装 Docker</h4><p>Docker 软件包和依赖包已经包含在默认的 CentOS-Extras 软件源里，安装命令如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@slw ~]# yum -y install docker</span><br></pre></td></tr></table></figure>
 <p>安装完成。</p>
 <p>启动 Docker 后台服务</p>
@@ -606,7 +606,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是docker？"><span class="nav-number">1.</span> <span class="nav-text">什么是docker？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-的优点"><span class="nav-number">2.</span> <span class="nav-text">Docker 的优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-yum-安装（CentOS-7下）"><span class="nav-number">3.</span> <span class="nav-text">使用 yum 安装（CentOS 7下）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Docker"><span class="nav-number">4.</span> <span class="nav-text">安装 Docker</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是docker？"><span class="nav-number">1.</span> <span class="nav-text">什么是docker？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Docker-的优点"><span class="nav-number">2.</span> <span class="nav-text">Docker 的优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用-yum-安装（CentOS-7下）"><span class="nav-number">3.</span> <span class="nav-text">使用 yum 安装（CentOS 7下）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-Docker"><span class="nav-number">4.</span> <span class="nav-text">安装 Docker</span></a></li></ol></div>
             
 
           </div>

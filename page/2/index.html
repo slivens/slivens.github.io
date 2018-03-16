@@ -371,7 +371,7 @@
 
       
         
-          <h2 id="lnmp项目环境搭建"><a href="#lnmp项目环境搭建" class="headerlink" title="lnmp项目环境搭建"></a>lnmp项目环境搭建</h2><p>个人github相关项目:<a href="https://github.com/slivens/lnmp-slw" target="_blank" rel="noopener">Lnmp请点击此处</a></p>
+          <h4 id="lnmp项目环境搭建"><a href="#lnmp项目环境搭建" class="headerlink" title="lnmp项目环境搭建"></a>lnmp项目环境搭建</h4><p>个人github相关项目:<a href="https://github.com/slivens/lnmp-slw" target="_blank" rel="noopener">Lnmp请点击此处</a></p>
 <ol>
 <li>首先进入docker-compose的配置文件下</li>
 <li>进行命令docker-compose up -d 另外再执行docker-compose build 载入dockfile</li>
@@ -535,7 +535,7 @@
 
       
         
-          <h3 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h3><p>ES2017 标准引入了 async 函数，使得异步操作变得更加方便。</p>
+          <h4 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h4><p>ES2017 标准引入了 async 函数，使得异步操作变得更加方便。</p>
 <p>async 函数是什么？一句话，它就是 Generator 函数的语法糖。</p>
 <p>前文有一个 Generator 函数，依次读取两个文件。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&apos;fs&apos;);</span><br><span class="line"></span><br><span class="line">const readFile = function (fileName) &#123;</span><br><span class="line">  return new Promise(function (resolve, reject) &#123;</span><br><span class="line">    fs.readFile(fileName, function(error, data) &#123;</span><br><span class="line">      if (error) return reject(error);</span><br><span class="line">      resolve(data);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const gen = function* () &#123;</span><br><span class="line">  const f1 = yield readFile(&apos;/etc/fstab&apos;);</span><br><span class="line">  const f2 = yield readFile(&apos;/etc/shells&apos;);</span><br><span class="line">  console.log(f1.toString());</span><br><span class="line">  console.log(f2.toString());</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -695,9 +695,9 @@
 
       
         
-          <h3 id="查看远程分支"><a href="#查看远程分支" class="headerlink" title="查看远程分支"></a>查看远程分支</h3><p>加上-a参数可以查看远程分支，远程分支会用红色表示出来（如果你开了颜色支持的话）：</p>
+          <h4 id="查看远程分支"><a href="#查看远程分支" class="headerlink" title="查看远程分支"></a>查看远程分支</h4><p>加上-a参数可以查看远程分支，远程分支会用红色表示出来（如果你开了颜色支持的话）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git branch -a</span><br><span class="line">  master</span><br><span class="line">  remote</span><br><span class="line">  tungway</span><br><span class="line">  v1.52</span><br><span class="line">* zrong</span><br><span class="line">  remotes/origin/master</span><br><span class="line">  remotes/origin/tungway</span><br><span class="line">  remotes/origin/v1.52</span><br><span class="line">  remotes/origin/zrong</span><br></pre></td></tr></table></figure>
-<h3 id="删除远程分支和tag"><a href="#删除远程分支和tag" class="headerlink" title="删除远程分支和tag"></a>删除远程分支和tag</h3><p>在Git v1.7.0 之后，可以使用这种语法删除远程分支：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin --delete &lt;branchName&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="删除远程分支和tag"><a href="#删除远程分支和tag" class="headerlink" title="删除远程分支和tag"></a>删除远程分支和tag</h4><p>在Git v1.7.0 之后，可以使用这种语法删除远程分支：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin --delete &lt;branchName&gt;</span><br></pre></td></tr></table></figure></p>
 <p>删除tag这么用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin --delete tag &lt;tagname&gt;</span><br></pre></td></tr></table></figure></p>
 <p>否则，可以使用这种语法，推送一个空分支到远程分支，其实就相当于删除远程分支：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin :&lt;branchName&gt;</span><br></pre></td></tr></table></figure>

@@ -1131,7 +1131,6 @@ pre .javascript .function {
   display: inline-block;
   vertical-align: top;
   line-height: 36px;
-  font-size: 26px !important;
   font-weight: normal;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
@@ -1203,7 +1202,7 @@ pre .javascript .function {
 }
 .menu .menu-item a {
   display: block;
-  font-size: 16px;
+  font-size: 15px;
   line-height: inherit;
   border-bottom: 1px solid transparent;
   transition-property: border-color;
@@ -1276,6 +1275,7 @@ pre .javascript .function {
   border-radius: 13px;
   padding: 14px;
   background: rgba(255,255,255,0.788);
+  margin-top: 46px !important;
 }
 @media (max-width: 767px) {
   .posts-expand {
@@ -1465,6 +1465,7 @@ pre .javascript .function {
   text-align: center;
   word-break: break-word;
   font-weight: 400;
+  font-size: 24px !important;
 }
 .posts-expand .post-title-link {
   display: inline-block;
@@ -1831,7 +1832,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #57fb42;
+  background: #4d7744;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1952,7 +1953,7 @@ pre .javascript .function {
   color: #87daff;
 }
 .footer {
-  font-size: 20px;
+  font-size: 16px;
   color: #999;
   background: #d08d86 !important;
   height: 50px !important;
@@ -2629,7 +2630,7 @@ hr {
   background: #e0eeee;
 }
 .header-inner {
-  padding: 25px 0 20px;
+  padding: 14px 0 14px;
 }
 .header-inner:before,
 .header-inner:after {
@@ -2840,8 +2841,8 @@ hr {
 }
 .post-button a {
   padding: 0;
-  width: 120px;
-  font-size: 18px;
+  width: 100px;
+  font-size: 14px !important;
   color: #000;
   background: none;
   border: none;
@@ -2913,7 +2914,7 @@ hr {
 }
 .footer {
   margin-top: 80px;
-  padding: 10px 0;
+  padding: 6px 0;
   background: #d08d86;
   color: #666;
 }
@@ -2932,7 +2933,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-size: 14px;
+  font-size: 13px;
 }
 body h1 {
   font-size: 20px;
